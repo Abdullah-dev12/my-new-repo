@@ -4,69 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Social Media Logos</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f2f5;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 40px 20px;
-    }
-    h1 {
-      color: #333;
-      margin-bottom: 30px;
-    }
-    .cards {
-      display: flex;
-      gap: 30px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .card {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      padding: 30px 40px;
-      text-align: center;
-      width: 180px;
-    }
-    .card img {
-      width: 80px;
-      height: 80px;
-      object-fit: contain;
-      margin-bottom: 15px;
-    }
-    .card h2 {
-      font-size: 18px;
-      margin-bottom: 15px;
-      color: #333;
-    }
-    .download-btn {
-      display: inline-block;
-      padding: 8px 18px;
-      background-color: #4a90e2;
-      color: white;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 14px;
-      transition: background 0.2s;
-    }
-    .download-btn:hover {
-      background-color: #357abd;
-    }
-    .facebook .download-btn { background-color: #1877F2; }
-    .facebook .download-btn:hover { background-color: #0d5dbc; }
-    .twitter .download-btn { background-color: #1DA1F2; }
-    .twitter .download-btn:hover { background-color: #0a82c8; }
-    .instagram .download-btn { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
-    .instagram .download-btn:hover { opacity: 0.85; }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <h1>Social Media Logos</h1>
-  <div class="cards">
+  <p id="subtitle">Click a card to highlight it. Use the search to filter.</p>
 
+  <button id="theme-toggle">&#127769; Dark Mode</button>
+
+  <input
+    type="text"
+    id="search-input"
+    placeholder="Search logos..."
+    style="margin-bottom:24px;padding:8px 16px;border-radius:20px;border:1px solid #ccc;font-size:14px;outline:none;"
+  >
+
+  <div class="cards">
     <!-- Facebook -->
     <div class="card facebook">
       <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo">
@@ -87,7 +40,13 @@
       <h2>Instagram</h2>
       <a class="download-btn" href="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" download="instagram-logo.png">Download</a>
     </div>
-
   </div>
+
+  <p id="footer">Social Media Logos &mdash; hover, click, or search to explore.</p>
+
+  <!-- Toast Notification -->
+  <div id="toast"></div>
+
+  <script src="script.js"></script>
 </body>
 </html>
