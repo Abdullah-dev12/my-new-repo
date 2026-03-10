@@ -1,0 +1,183 @@
+/* ===== Reset & Base ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* ===== Dark Mode ===== */
+body.dark-mode {
+  background-color: #1a1a2e;
+  color: #e0e0e0;
+}
+
+body.dark-mode .card {
+  background: #16213e;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .card h2 {
+  color: #e0e0e0;
+}
+
+/* ===== Header ===== */
+h1 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+body.dark-mode h1 {
+  color: #e0e0e0;
+}
+
+#subtitle {
+  color: #666;
+  margin-bottom: 30px;
+  font-size: 0.95rem;
+}
+
+body.dark-mode #subtitle {
+  color: #aaa;
+}
+
+/* ===== Theme Toggle Button ===== */
+#theme-toggle {
+  margin-bottom: 30px;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  background-color: #333;
+  color: #fff;
+  transition: background-color 0.3s;
+}
+
+#theme-toggle:hover {
+  background-color: #555;
+}
+
+body.dark-mode #theme-toggle {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+/* ===== Cards Container ===== */
+.cards {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ===== Individual Card ===== */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px 40px;
+  text-align: center;
+  width: 200px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
+.card.active {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover img {
+  transform: rotate(5deg) scale(1.1);
+}
+
+.card h2 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* ===== Download Buttons ===== */
+.download-btn {
+  display: inline-block;
+  padding: 8px 18px;
+  background-color: #4a90e2;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.download-btn:hover {
+  background-color: #357abd;
+  transform: scale(1.05);
+}
+
+/* ===== Brand Colors ===== */
+.facebook .download-btn { background-color: #1877F2; }
+.facebook .download-btn:hover { background-color: #0d5dbc; }
+
+.twitter .download-btn { background-color: #1DA1F2; }
+.twitter .download-btn:hover { background-color: #0a82c8; }
+
+.instagram .download-btn {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+.instagram .download-btn:hover { opacity: 0.85; }
+
+/* ===== Toast Notification ===== */
+#toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: #333;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+#toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ===== Footer ===== */
+#footer {
+  margin-top: 50px;
+  color: #999;
+  font-size: 13px;
+}
